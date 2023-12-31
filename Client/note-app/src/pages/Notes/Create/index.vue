@@ -38,10 +38,12 @@ import axios from "axios";
 import TitleBar from "../../../components/TitleBar.vue";
 import Button from "../../../components/Button.vue";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const title = defineModel("title");
 const text = defineModel("text");
 const creatingNote = ref(false);
+const router = useRouter();
 
 const createNote = async () => {
   creatingNote.value = true;
@@ -55,6 +57,7 @@ const createNote = async () => {
       title.value = "";
       text.value = "";
       creatingNote.value = false;
+      router.push("/");
     })
     .catch((error) => {
       console.log(error);
