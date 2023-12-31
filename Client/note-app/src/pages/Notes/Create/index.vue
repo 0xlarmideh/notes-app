@@ -4,7 +4,15 @@
       title="Create Notes"
       description="Provide details to create your note"
     />
-    <div class="mt-8">
+    <div class="mt-4 ">
+      <div class="flex mb-8 justify-center">
+        <RouterLink to="/">
+          <Button
+            className="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
+            text="Back to notes"
+          />
+        </RouterLink>
+      </div>
       <div class="flex flex-col gap-4 max-w-[400px] mx-auto">
         <div class="flex flex-col">
           <label class="text-[18px]" for="title">Title</label>
