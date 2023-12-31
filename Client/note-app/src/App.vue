@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    init repo
+    <router-view />
   </div>
 </template>
 
