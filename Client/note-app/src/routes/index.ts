@@ -8,7 +8,7 @@ const NotFound = () => import("../pages/404.vue")
 
 const routes = [
   { path: "/", component: Notes },
-  { path: "/note/:id", component: NoteDetail },
+  { path: "/notes/:id", component: NoteDetail },
   { path: "/create", component: CreateNote },
   { path: "/edit/:id", component: EditNote },
   {

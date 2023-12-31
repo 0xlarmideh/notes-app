@@ -12,8 +12,14 @@
         </RouterLink>
       </div>
       <div class="mb-4" v-if="notes" v-for="(note, idx) in notes">
-        <p class="font-medium text-[30px]">{{ `${idx + 1}: ${note.title}` }}</p>
-        <p class="text-[18px] font-[400]">{{ note.text }}</p>
+        <RouterLink :to="'/notes/' + note._id">
+          <div class="hover:cursor border-b pb-4">
+            <p class="font-medium text-[30px]">
+              {{ `${idx + 1}: ${note.title}` }}
+            </p>
+            <p class="text-[18px] font-[400]">{{ note.text }}</p>
+          </div>
+        </RouterLink>
       </div>
       <div v-else>No notes found</div>
     </div>
