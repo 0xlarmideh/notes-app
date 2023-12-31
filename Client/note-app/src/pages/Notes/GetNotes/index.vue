@@ -12,14 +12,17 @@
         </RouterLink>
       </div>
       <div class="mb-4" v-if="notes" v-for="(note, idx) in notes">
-        <RouterLink :to="'/notes/' + note._id">
-          <div class="hover:cursor border-b pb-4">
+        <div class="border-b pb-4 flex items-center justify-between">
+          <RouterLink :to="'/notes/' + note._id">
             <p class="font-medium text-[30px]">
               {{ `${idx + 1}: ${note.title}` }}
             </p>
             <p class="text-[18px] font-[400]">{{ note.text }}</p>
-          </div>
-        </RouterLink>
+          </RouterLink>
+          <span class="cursor-pointer" @click="deleteNote(note._id)">
+            <Icon icon="fluent:delete-20-filled" color="red" height="32" />
+          </span>
+        </div>
       </div>
       <div v-else>No notes found</div>
     </div>
@@ -31,6 +34,7 @@ import { ref, onMounted } from "vue";
 import TitleBar from "../../../components/TitleBar.vue";
 import axios from "axios";
 import Button from "../../../components/Button.vue";
+import { Icon } from "@iconify/vue";
 
 const loading = ref(false);
 const notes = ref();
@@ -44,6 +48,18 @@ const fetchNotes = async () => {
   } finally {
     loading.value = false;
   }
+};
+
+const deleteNote = async (id: string) => {
+  await axios
+    .delete("/api/notes/" + id)
+    .then(() => {
+      fetchNotes();
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Failed to delete note");
+    });
 };
 
 onMounted(async () => {
