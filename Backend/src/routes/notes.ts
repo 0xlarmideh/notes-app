@@ -1,4 +1,4 @@
-import { createNotes, deleteNote, getNotes, getSingleNote, updateNote } from "../controllers";
+import { createNotes, deleteNote, getNotes, getSingleNote, updateNote } from "../controllers/notes";
 import express from "express"
 
 const router = express.Router();

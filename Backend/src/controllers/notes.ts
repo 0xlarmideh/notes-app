@@ -1,5 +1,5 @@
 import { RequestHandler } from "express";
-import NoteModel from "../models/schema";
+import NoteModel from "../models/notes";
 import createHttpError from "http-errors";
 import mongoose from "mongoose";
 
