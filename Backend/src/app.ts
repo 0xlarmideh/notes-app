@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import router from "./routes";
+import router from "./routes/notes";
 import morgan from "morgan";
 import createHttpError, { isHttpError } from "http-errors";
 
