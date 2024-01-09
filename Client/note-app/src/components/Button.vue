@@ -1,16 +1,7 @@
 <template>
   <button
     :href="[link]"
-    :class="[
-      'py-[.8rem]',
-      'px-[1.3rem]',
-      'rounded-full',
-      'text-white',
-      'flex',
-      'gap-[1rem]',
-      'items-center',
-      className,
-    ]"
+    class="py-[.8rem] px-[1.3rem] rounded-full text-white flex gap-[1rem] items-center"
   >
     {{ text }}
     <Icon icon="carbon:dot-mark" color="white" width="10" height="10" />
@@ -32,10 +23,6 @@ export default {
     link: {
       type: String,
       required: false,
-    },
-    className: {
-      type: String,
-      default: "",
     },
   },
 };

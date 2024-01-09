@@ -6,7 +6,7 @@
       <div class="flex justify-center">
         <RouterLink to="/create">
           <Button
-            className="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
+            class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
             text="Add note"
           />
         </RouterLink>

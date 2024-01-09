@@ -9,7 +9,7 @@
       <div class="flex justify-center">
         <RouterLink to="/">
           <Button
-            className="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
+            class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
             text="Back to notes"
           />
         </RouterLink>
