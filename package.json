@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5"
   },
   "scripts": {
     "start:both": "concurrently \"cd Backend && npm start\" \"cd Client/note-app && npm run dev\"",
