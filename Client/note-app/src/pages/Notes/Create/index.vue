@@ -1,16 +1,10 @@
 <template>
   <div>
-    <TitleBar
-      title="Create Notes"
-      description="Provide details to create your note"
-    />
+    <TitleBar title="Create Notes" description="Provide details to create your note" />
     <div class="mt-4 ">
       <div class="flex mb-8 justify-center">
         <RouterLink to="/">
-          <Button
-            className="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
-            text="Back to notes"
-          />
+          <Button class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]" text="Back to notes" />
         </RouterLink>
       </div>
       <div class="flex flex-col gap-4 max-w-[400px] mx-auto">
@@ -22,12 +16,8 @@
           <label class="text-[18px]" for="description">Description</label>
           <input class="border p-2" type="text" v-model="text" />
         </div>
-        <Button
-          :disabled="!title"
-          class="bg-black flex justify-center"
-          @click="createNote"
-          :text="creatingNote ? 'Creating note' : 'Create Note'"
-        />
+        <Button :disabled="!title" class="bg-black flex justify-center" @click="createNote"
+          :text="creatingNote ? 'Creating note' : 'Create Note'" />
       </div>
     </div>
   </div>
@@ -51,7 +41,7 @@ const createNote = async () => {
     ? { title: title.value, text: text.value }
     : { title: title.value };
   await axios
-    .post("/api/notes", formBody)
+    .post(import.meta.env.VITE_API_URL + "/api/notes", formBody)
     .then(() => {
       alert("Note created");
       title.value = "";

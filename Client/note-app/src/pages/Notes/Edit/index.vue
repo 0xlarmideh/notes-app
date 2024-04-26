@@ -1,16 +1,10 @@
 <template>
   <div>
-    <TitleBar
-      title="Edit Notes"
-      description="Here you can edit your note"
-    />
+    <TitleBar title="Edit Notes" description="Here you can edit your note" />
     <div class="mt-4 ">
       <div class="flex mb-8 justify-center">
         <RouterLink to="/">
-          <Button
-            class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
-            text="Back to notes"
-          />
+          <Button class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]" text="Back to notes" />
         </RouterLink>
       </div>
       <div class="flex flex-col gap-4 max-w-[400px] mx-auto">
@@ -22,12 +16,8 @@
           <label class="text-[18px]" for="description">Description</label>
           <input class="border p-2" type="text" v-model="text" />
         </div>
-        <Button
-          :disabled="!title"
-          class="bg-black flex justify-center"
-          @click="editNote"
-          :text="editingNote ? 'Editing note' : 'Edit Note'"
-        />
+        <Button :disabled="!title" class="bg-black flex justify-center" @click="editNote"
+          :text="editingNote ? 'Editing note' : 'Edit Note'" />
       </div>
     </div>
   </div>
@@ -50,7 +40,7 @@ const loading = ref(false);
 const fetchNote = async () => {
   loading.value = true;
   try {
-    const response = await axios.get("/api/notes/" + route.params.id);
+    const response = await axios.get(import.meta.env.VITE_API_URL + "/api/notes/" + route.params.id);
     title.value = response.data.title;
     text.value = response.data.text;
   } catch (error) {

@@ -1,17 +1,11 @@
 <template>
   <div>
-    <TitleBar
-      title="Note detail"
-      description="Here, you find details of your note"
-    />
+    <TitleBar title="Note detail" description="Here, you find details of your note" />
     <div v-if="loading">Loading .......</div>
     <div class="mt-4 mb-8" v-else>
       <div class="flex justify-center">
         <RouterLink to="/">
-          <Button
-            class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
-            text="Back to notes"
-          />
+          <Button class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]" text="Back to notes" />
         </RouterLink>
       </div>
       <div class="mb-4 flex items-center justify-between" v-if="note">
@@ -21,8 +15,7 @@
           </p>
           <p class="text-[18px] font-[400]">{{ note.text }}</p>
         </div>
-        <span
-          >
+        <span>
           <RouterLink :to="'/edit/' + note._id">
             <Icon icon="mingcute:edit-fill" color="gray" height="32" />
           </RouterLink>
@@ -47,7 +40,7 @@ const route = useRoute();
 const fetchNotes = async () => {
   loading.value = true;
   try {
-    const response = await axios.get("/api/notes/" + route.params.id);
+    const response = await axios.get(import.meta.env.VITE_API_URL + "/api/notes/" + route.params.id);
     note.value = response.data;
   } catch (error) {
     console.log(error);

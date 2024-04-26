@@ -5,10 +5,7 @@
     <div class="mt-4 mb-8" v-else>
       <div class="flex justify-center">
         <RouterLink to="/create">
-          <Button
-            class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]"
-            text="Add note"
-          />
+          <Button class="bg-blue-600 max-md:mt-[2.1rem]  mt-[.9rem]" text="Add note" />
         </RouterLink>
       </div>
       <div class="mb-4" v-if="notes" v-for="(note, idx) in notes">
@@ -52,7 +49,7 @@ const fetchNotes = async () => {
 
 const deleteNote = async (id: string) => {
   await axios
-    .delete("/api/notes/" + id)
+    .delete(import.meta.env.VITE_API_URL + "/api/notes/" + id)
     .then(() => {
       fetchNotes();
     })
