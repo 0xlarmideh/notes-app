@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start:both": "concurrently \"cd Backend && npm start\" \"cd Client/note-app && npm run dev\"",
+    "install:both": "concurrently \"cd Backend && npm install\" \"cd Client/note-app && npm install\"",
+    "build:both": "concurrently \"cd Backend && npm run build\" \"cd Client/note-app && npm run build\""
+  }
+}
