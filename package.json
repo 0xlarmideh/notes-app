@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "concurrently": "^8.2.2",
     "pre-commit": "^1.2.2",
     "rimraf": "^5.0.5"
