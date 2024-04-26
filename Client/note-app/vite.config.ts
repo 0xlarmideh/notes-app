@@ -7,7 +7,8 @@ export default defineConfig({
   base: "/",
   server: {
     proxy: {
-      "/api/notes": process.env.VITE_API_URL || "http://localhost:5000",
+      "/api/notes":
+        "https://notes-app-zc9a.onrender.com" || "http://localhost:5000",
     },
   },
 });
