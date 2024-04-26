@@ -49,7 +49,7 @@ const fetchNotes = async () => {
 
 const deleteNote = async (id: string) => {
   await axios
-    .delete(import.meta.env.VITE_API_URL + "/api/notes/" + id)
+    .delete("/api/notes/" + id)
     .then(() => {
       fetchNotes();
     })

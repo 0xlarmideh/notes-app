@@ -40,7 +40,7 @@ const route = useRoute();
 const fetchNotes = async () => {
   loading.value = true;
   try {
-    const response = await axios.get(import.meta.env.VITE_API_URL + "/api/notes/" + route.params.id);
+    const response = await axios.get("/api/notes/" + route.params.id);
     note.value = response.data;
   } catch (error) {
     console.log(error);

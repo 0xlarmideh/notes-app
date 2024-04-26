@@ -41,7 +41,7 @@ const createNote = async () => {
     ? { title: title.value, text: text.value }
     : { title: title.value };
   await axios
-    .post(import.meta.env.VITE_API_URL + "/api/notes", formBody)
+    .post("/api/notes", formBody)
     .then(() => {
       alert("Note created");
       title.value = "";
